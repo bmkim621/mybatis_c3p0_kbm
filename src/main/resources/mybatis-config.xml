@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="application.properties" />
+	
+	<typeAliases>
+		<package name="kr.or.yi.mybatis_c3p0_kbm.dto" />
+	<!--
+		위에 패키지 이름만 지정하면 그 패키지 이름 아래에 있는 것들을 알아서 만들어 준다. 
+		<typeAlias type="kr.or.yi.mybatis_c3p0_kbm.dto.Title" alias="Title"/ >
+		<typeAlias type="kr.or.yi.mybatis_c3p0_kbm.dto.Department" alias="Department"/ >
+		<typeAlias type="kr.or.yi.mybatis_c3p0_kbm.dto.Employee" alias="Employee"/ > -->
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mappers/TitleMapper.xml" />
+	</mappers>
+</configuration>
