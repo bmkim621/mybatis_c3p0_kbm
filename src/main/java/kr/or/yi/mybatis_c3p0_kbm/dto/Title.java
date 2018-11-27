@@ -4,6 +4,11 @@ public class Title {
 	private int code;
 	private String name;
 	
+	public Title(int code, String name) {
+		this.code = code;
+		this.name = name;
+	}
+	
 	//getters, setters
 	public int getCode() {
 		return code;
@@ -17,6 +22,7 @@ public class Title {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	
 	//toString
 	@Override
